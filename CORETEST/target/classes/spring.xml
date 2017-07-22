@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employeeDAO" class="com.testapp.dao.EmployeeDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" >
+   <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/testpro" />
+   <property name="driverClass" value="com.mysql.jdbc.Driver" />
+   <property name="user" value="smppuser" />
+   <property name="password" value="smpp" />
+   <property name="MinPoolSize" value="5" />
+   <property name="MaxPoolSize" value="20" />
+   <property name="AcquireIncrement" value="3" />  
+   <property name="maxIdleTime" value="3600" />
+
+</bean>
+	
+
+</beans>
