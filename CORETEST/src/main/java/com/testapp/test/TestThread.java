@@ -20,6 +20,10 @@ public class TestThread implements Runnable {
 		this.jdbcTemplate = new JdbcTemplate(AppTester.dataSource);
 	}
 
+	private void testMethod() {
+		System.out.println("Testing Method for changes");
+	}
+
 	@Override
 	public void run() {
 		while (counter < 50) {
